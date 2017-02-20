@@ -12,7 +12,6 @@ module.exports = {
         id: {
             type: 'integer',
             primaryKey: true,
-            // required: true,
             autoIncrement: true
         },
         login :{

@@ -1,9 +1,5 @@
-/**
- * UserController
- *
- * @description :: Server-side logic for managing Users
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
- */
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 module.exports = {
 
@@ -25,9 +21,12 @@ module.exports = {
 
     insert: function (req, res){
 
+        var salt = bcrypt.genSaltSync(saltRounds);
+        var hash = bcrypt.hashSync(req.body.password, salt);
+
         User.create({
             login : req.body.login,
-            password : req.body.password,
+            password : hash,
             firstname : req.body.firstname,
             lastname : req.body.lastname,
             phone : req.body.phone,
