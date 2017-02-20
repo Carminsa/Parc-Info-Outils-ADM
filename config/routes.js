@@ -32,17 +32,27 @@ module.exports.routes = {
      *                                                                          *
      ***************************************************************************/
 
-    '/': {
-        view: 'index/index',
+    'get /': {
+        controller : 'UserController',
+        action : 'index',
         locals: {
             layout: 'layout'
         }
     },
 
     'get /register' : {
-        view: 'index/register',
+        controller : 'UserController',
+        action : 'create',
         locals: {
-        layout: 'layout'
+            layout: 'layout'
+        }
+    },
+
+    'post /insert' : {
+        controller : 'UserController',
+        action : 'insert',
+        locals: {
+            layout: 'layout'
         }
     },
 

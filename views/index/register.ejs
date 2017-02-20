@@ -1,5 +1,15 @@
 <div class="col-md-12 margin-top">
-    <form>
+
+    <% if (error) { %>
+    <div class="alert alert-danger">
+        <p class="error">Une erreur est survenue merci de ressayer</p>
+    </div>
+
+
+    <% } %>
+
+
+    <form action="/insert" method="post">
 
         <div class="form-group">
             <label for="login" class="label_auth ">Login</label>
@@ -24,7 +34,7 @@
 
         <div class="form-group">
             <label for="phone" class="label_auth">Numéro de Téléphone</label>
-            <input type="phone" name="phone" class="form-control" id="phone">
+            <input type="tel" name="phone" class="form-control" id="phone">
         </div>
 
 

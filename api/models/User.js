@@ -15,7 +15,8 @@ module.exports = {
         },
         password : {
             type : "string",
-            required : true
+            required : true,
+            minLength: 3
         },
         firstname : {
             type : "string",
@@ -26,7 +27,7 @@ module.exports = {
             required : true
         },
         phone : {
-            type : int,
+            type : "integer",
             required : true
         },
         mail : {
