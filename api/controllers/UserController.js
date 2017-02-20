@@ -7,8 +7,6 @@
 
 module.exports = {
 
-
-
     /**
      * `UserController.index()`
      */
@@ -35,8 +33,12 @@ module.exports = {
             phone : req.body.phone,
             mail: req.body.mail,
         }).exec(function (err, newUser) {
-
-            return res.view('index/register', {error : err.ValidationError});
+            if (err) {
+                console.log(err.ValidationError);
+                return res.view('index/register', {error: err.ValidationError});
+            }else {
+                return res.view('index/index');
+            }
         });
     },
 

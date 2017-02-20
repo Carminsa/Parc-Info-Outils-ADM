@@ -8,6 +8,13 @@
 module.exports = {
 
     attributes: {
+
+        id: {
+            type: 'integer',
+            primaryKey: true,
+            // required: true,
+            autoIncrement: true
+        },
         login :{
             type: "string",
             unique : true,
