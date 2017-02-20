@@ -1,0 +1,52 @@
+
+body{
+    background-color : #bdc3c7;
+}
+
+/*SURCHARGE BOOTSTRAP*/
+
+.navbar{
+    color: #FFFFFF;
+    background-color: #607D8B;
+    border-color: #607D8B;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-brand{
+    color: #FFFFFF;
+    font-size: 30px;
+    border-color: #607D8B;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    /*background-color: #455A64;*/
+    color: #FFC107 ;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
+.navbar-default:hover .navbar-nav:hover > li:hover > a:hover {
+    color: #FFC107 ;
+}
+
+/*****************************    ---MY APP -----   ***************************/
+
+.right{
+    float : right
+}
+
+.margin-top{
+    margin-top: 15vh;
+    background-color: #27ae60;
+    padding: 35px 30px 30px 30px;
+    border-radius: 1%;
+}
+ .label_auth{
+     color: #ffffff;
+ }
+
+

@@ -49,10 +49,10 @@ module.exports.connections = {
   // },
 
   mysql: {
-      adapter: 'sails-mysql',
-      module    : 'myParcInfo',
+      adapter   : 'sails-mysql',
+      // module    : 'myParcInfo',
       host      : 'localhost',
-      port      :  3306,
+      // port      :  3306,
       user      : 'root',
       socketPath: '/opt/lampp/var/mysql/mysql.sock',
       password  : '',
