@@ -33,7 +33,6 @@ module.exports = {
             mail: req.body.mail,
         }).exec(function (err, newUser) {
             if (err) {
-                console.log(err.ValidationError);
                 return res.view('index/register', {error: err.ValidationError});
             }else {
                 return res.view('index/index');

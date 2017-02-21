@@ -17,7 +17,8 @@ module.exports = {
         login :{
             type: "string",
             unique : true,
-            required : true
+            required : true,
+            regex: /^[\w&.\-]*$/
         },
         password : {
             type : "string",
@@ -26,20 +27,24 @@ module.exports = {
         },
         firstname : {
             type : "string",
-            required : true
+            required : true,
+            regex: /^[\w&.\-\s]*$/
         },
         lastname : {
             type : "string",
-            required : true
+            required : true,
+            regex: /^[\w&.\-\s]*$/
         },
         phone : {
             type : "integer",
-            required : true
+            required : true,
+            // regex: /[^0-9]/,
         },
         mail : {
             type: "string",
             unique : true,
-            required : true
+            required : true,
+            email : true
         },
         role : {
             type : "string",
