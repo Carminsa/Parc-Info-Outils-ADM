@@ -1,12 +1,22 @@
 <div class="col-md-12 margin-top">
-    <form>
+
+    <% if (error) { %>
+    <div class="alert alert-danger">
+        <p class="error"><%= error %></p>
+    </div>
+
+
+    <% } %>
+
+
+    <form action="/login" method="post">
         <div class="form-group">
             <label for="login" class="label_auth ">Login</label>
-            <input type="text" class="form-control" id="login">
+            <input type="text" class="form-control" name="login" id="login">
         </div>
         <div class="form-group">
             <label for="password" class="label_auth">Mot de Passe</label>
-            <input type="password" class="form-control" id="password">
+            <input type="password" class="form-control" name="password" id="password">
         </div>
         <input type="submit" class="btn btn-lg btn-primary" value="Se Connecter">
         <a href="/register" class="btn btn-lg btn-danger right">S'inscrire</a>

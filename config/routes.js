@@ -56,6 +56,14 @@ module.exports.routes = {
         }
     },
 
+    'post /login' : {
+        controller : 'UserController',
+        action : 'login',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
     /***************************************************************************
      *                                                                          *
      * Custom routes here...                                                    *
