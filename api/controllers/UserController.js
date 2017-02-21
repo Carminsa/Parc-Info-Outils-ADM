@@ -21,6 +21,8 @@ module.exports = {
             } else {
                 req.session.userId = user[0].id;
                 req.session.userLogin = user[0].login;
+                req.session.save();
+                return res.redirect('/home');
             }
         });
     },
