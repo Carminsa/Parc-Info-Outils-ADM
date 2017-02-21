@@ -1,28 +1,26 @@
-var bcrypt = require('bcrypt');
-const saltRounds = 10;
-var salt = bcrypt.genSaltSync(saltRounds);
+// var passwordHash = require('password-hash');
 
 module.exports = {
 
     index: function (req, res) {
-        return res.view('index/index');
+        return res.view('index/index', {error : err = null });
     },
 
 
     login: function(req, res){
 
-        var hash = bcrypt.hashSync(req.body.password, salt);
+        // var hash = passwordHash.generate(req.body.password);
+        // console.log(hash);
 
         User.find({
             login: req.body.login,
-            password: hash
+            password: req.body.password
         }).exec(function (err, user) {
-            if (user.length >= 0) {
+            if (user.length === 0) {
                 return res.view('index/index', {error: "Erreur login/mot de passe"});
-                // return res.serverError(err);
             } else {
-                console.log('test');
-                console.log(user)
+                req.session.userId = user[0].id;
+                req.session.userLogin = user[0].login;
             }
         });
     },
@@ -35,20 +33,22 @@ module.exports = {
 
     insert: function (req, res){
 
-        var hash = bcrypt.hashSync(req.body.password, salt);
+        // var hash = bcrypt.hashSync(req.body.password, null, null);
+        // var hashedPassword = passwordHash.generate(req.body.password);
 
         User.create({
             login : req.body.login,
-            password : hash,
+            password : req.body.password,
             firstname : req.body.firstname,
             lastname : req.body.lastname,
             phone : req.body.phone,
             mail: req.body.mail,
         }).exec(function (err) {
             if (err) {
+                console.log(err);
                 return res.view('index/register', {error: err.ValidationError});
             }else {
-                return res.view('index/index');
+                return res.view('index/index', {error : err = null });
             }
         });
     },
