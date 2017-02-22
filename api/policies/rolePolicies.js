@@ -9,14 +9,19 @@
  */
 module.exports = function(req, res, next) {
 
-  // User is allowed, proceed to the next policy,
-  // or if this is the last policy, the controller
+    if (req.session.userId) {
+      console.log("mon role est ici => " + req.session.role);
+        console.log(1);
+        if (req.session.role == 1){
+            console.log(2);
 
-  if (req.session.userId) {
-    return next();
-  }
+            return next();
+        }
+        console.log(3);
 
-  // User is not allowed
-  // (default res.forbidden() behavior can be overridden in `config/403.js`)
+        return res.redirect('/home');
+    }
+    console.log(4);
+
     return res.redirect('/');
 };

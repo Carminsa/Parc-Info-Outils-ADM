@@ -64,6 +64,24 @@ module.exports.routes = {
         }
     },
 
+    'get /logout' : {
+        controller : 'UserController',
+        action : 'logout',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+
+    'get /index' : {
+        controller : 'AdminController',
+        action : 'index',
+        locals: {
+            layout: 'layout'
+        },
+    },
+
+
     /***************************************************************************
      *                                                                          *
      * Custom routes here...                                                    *

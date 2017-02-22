@@ -13,7 +13,7 @@ module.exports = {
      * `HomeController.index()`
      */
     index: function (req, res) {
-      console.log(req.session);
+      // console.log(req.session);
         return res.view('home/index');
     },
 

@@ -23,6 +23,10 @@ module.exports.policies = {
         '*': 'sessionAuth',
     },
 
+    AdminController : {
+        '*': 'rolePolicies',
+    },
+
 
   /***************************************************************************
   *                                                                          *

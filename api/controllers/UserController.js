@@ -21,9 +21,16 @@ module.exports = {
             } else {
                 req.session.userId = user[0].id;
                 req.session.userLogin = user[0].login;
+                req.session.role = user[0].role;
                 req.session.save();
                 return res.redirect('/home');
             }
+        });
+    },
+
+    logout: function(req, res) {
+        req.session.destroy(function(err) {
+            res.redirect('/');
         });
     },
 
