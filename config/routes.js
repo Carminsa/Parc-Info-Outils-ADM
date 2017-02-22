@@ -72,14 +72,29 @@ module.exports.routes = {
         }
     },
 
-
     'get /index' : {
         controller : 'AdminController',
         action : 'index',
         locals: {
             layout: 'layout'
-        },
+        }
     },
+
+    'get /users' : {
+        controller : 'AdminController',
+        action : 'users',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'get /users/:id' : {
+        controller : 'AdminController',
+        action : 'show',
+        locals: {
+            layout: 'layout'
+        },
+    }
 
 
     /***************************************************************************
