@@ -74,3 +74,7 @@ body{
     padding: 50px 30px 30px 30px;
     border-radius: 1%;
 }
+
+#cpu_btn{
+    margin-left: -63px;
+}

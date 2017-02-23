@@ -20,8 +20,19 @@ module.exports = {
     },
 
     create: function (req, res) {
-        return res.json({
-            todo: 'create() is not implemented yet!'
+        return res.view('admin/create', {error : null});
+    },
+
+    insert_cpu: function(req, res){
+        Computer.create({
+            serial : req.body.serial,
+            state : req.body.state,
+            os : req.body.os,
+            usage : req.body.usage,
+            sav : req.body.sav,
+            garant: req.body.garant,
+        }).exec(function(err, computer){
+            console.log(computer);
         });
     },
 

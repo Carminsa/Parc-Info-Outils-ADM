@@ -104,6 +104,22 @@ module.exports.routes = {
         }
     },
 
+    'get /add_cpu' : {
+        controller : 'AdminController',
+        action : 'create',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'post /insert_cpu' : {
+        controller : 'AdminController',
+        action : 'insert_cpu',
+        locals : {
+            layout : 'layout'
+        }
+    },
+
 
     /***************************************************************************
      *                                                                          *
