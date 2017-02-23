@@ -1,0 +1,74 @@
+<div class="col-md-4 col-md-offset-5">
+    <p class="h1"><%= users[0].login[0].toUpperCase() + users[0].login.slice(1) %></p>
+</div>
+
+<div class="col-md-12" id="margin-top-edit">
+
+    <% if (req.flash('error') == "true"){ %>
+    <div class="alert alert-danger">
+        <p class="error"> Bien tenté Florent ... </p>
+    </div>
+    <% } %>
+
+    <form action="/update" method="post">
+
+        <div class="form-group col-md-12">
+            <label for="login" class="col-md-2 h4 ">Login : </label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="login" id="login" value="<%= users[0].login %>">
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="firstname" class="col-md-2 h4 ">Prénom : </label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="firstname" id="firstname" value="<%= users[0].firstname %>">
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="lastname" class="col-md-2 h4 ">Nom de Famille : </label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="lastname" id="lastname" value="<%= users[0].lastname %>">
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="phone" class="col-md-2 h4 ">Téléphone : </label>
+            <div class="col-md-8">
+                <input type="tel" class="form-control" name="phone" id="phone" value="<%= users[0].phone %>">
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="email" class="col-md-2  h4">Email : </label>
+            <div class="col-md-8">
+                <input type="email" class="form-control" name="mail" id="email" value="<%= users[0].mail %>">
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="role" class="col-md-2 h4 ">Role : </label>
+            <div class="col-md-8">
+
+                <select name="role" class="selectpicker">
+                    <option value="<%= users[0].role  %>" selected="selected">Utilisateur standard</option>
+                    <option value="2">Utilisateur local</option>
+                    <option value="3">Utilisateur international</option>
+                    <option value="1">Admin</option>
+                </select>
+
+            </div>
+        </div>
+
+        <input type="hidden" name="id" value="<%= users[0].id %>">
+
+
+        <div class="col-md-4 col-md-offset-5">
+            <input type="submit" class="btn btn-lg btn-warning" value="Modifier">
+        </div>
+
+    </form>
+</div>
+
+

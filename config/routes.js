@@ -93,8 +93,16 @@ module.exports.routes = {
         action : 'show',
         locals: {
             layout: 'layout'
-        },
-    }
+        }
+    },
+
+    'post /update' : {
+        controller : 'AdminController',
+        action : 'update',
+        locals: {
+            layout: 'layout'
+        }
+    },
 
 
     /***************************************************************************

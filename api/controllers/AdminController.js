@@ -13,7 +13,7 @@ module.exports = {
 
     users: function (req, res){
         User.find({
-            role: {'!' : 1}
+            login: {'!' : 'root'}
         }).exec(function(err, user){
             return res.view('admin/users', {users : user});
         });
@@ -32,8 +32,27 @@ module.exports = {
             if (!user || user.length === 0) {
                 return res.redirect('..');
             }
-            console.log(user);
-            return res.view('admin/edit_user', {users: user});
+            return res.view('admin/edit_user', {users: user, error : null});
+        });
+    },
+
+    update: function(req, res){
+        User.update(
+            {id : req.body.id},
+            { login : req.body.login,
+                firstname : req.body.firstname,
+                lastname : req.body.lastname,
+                phone : req.body.phone,
+                mail: req.body.mail,
+                role : req.body.role,
+
+            }).exec(function(err, user){
+            if (err || user.length === 0)
+            {
+                req.flash('error', 'true');
+                return res.redirect('back');
+            }
+            return res.redirect('/users');
         });
     },
 
