@@ -1,0 +1,33 @@
+<div class="col-md-12 col-md-pull-1">
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Serial</th>
+            <th>Etat</th>
+            <th>Système d'Exploitation</th>
+            <th>Utilisateurs</th>
+            <th>Garantie</th>
+            <th>Mis à Jour </th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <% for(var i = 0 ; i < computers.length ; i++) {%>
+        <tr>
+            <td><%= computers[i].id %></td>
+            <td><%= computers[i].serial %></td>
+            <td><%= computers[i].state %></td>
+            <td><%= computers[i].os %></td>
+            <td><%= computers[i].usage %></td>
+            <td><%= computers[i].garantie %></td>
+            <td><%= computers[i].updatedAt %></td>
+            <td><a href="/users/<%= computers[i].id %>">Voir</a></td>
+        </tr>
+        <% } %>
+    </table>
+
+
+</div>

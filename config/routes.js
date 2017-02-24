@@ -120,6 +120,14 @@ module.exports.routes = {
         }
     },
 
+    'get /computers' : {
+        controller : 'AdminController',
+        action : 'all_cpu',
+        locals : {
+            layout : 'layout'
+        }
+    },
+
 
     /***************************************************************************
      *                                                                          *

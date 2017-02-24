@@ -20,6 +20,7 @@ module.exports = {
     },
 
     create: function (req, res) {
+
         return res.view('admin/create', {error : null});
     },
 
@@ -29,11 +30,18 @@ module.exports = {
             state : req.body.state,
             os : req.body.os,
             usage : req.body.usage,
-            SAV : req.body.sav,
             garantie: req.body.garant,
         }).exec(function(err, computer){
-            console.log(err);
-            console.log(computer);
+            if(err || computer.length === 0){
+                return res.view('admin/create', {error: err.ValidationError});
+            }
+            return res.view('admin/index',{error : err = null });
+        });
+    },
+
+    all_cpu: function(req, res){
+        Computer.find({}).exec(function(err, computers){
+           return res.view('admin/computers', {computers : computers});
         });
     },
 
