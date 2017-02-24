@@ -1,11 +1,8 @@
-/**
- * AdminController
- *
- * @description :: Server-side logic for managing Admins
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
- */
+var count = 1;
 
 module.exports = {
+
+
 
     index: function (req, res) {
         return res.view('admin/index', {error : err = null });
@@ -109,10 +106,20 @@ module.exports = {
     },
 
     edit: function (req, res) {
+
         Computer.update({
             id : req.param('id')
         },{SAV: 1}).exec(function(err, computer){
+            count++;
         });
+
+        Sav.create({
+            sav_number: count,
+            id_computer: req.param('id'),
+        }).exec(function(err, ok){
+            console.log(err);
+        });
+
         return res.redirect('/computers');
     },
 

@@ -16,14 +16,12 @@ module.exports = {
 
         sav_number : {
             type : 'integer',
-            required : true
         },
 
         id_computer: {
             type: 'integer',
             required : true
         }
-
     }
 };
 
