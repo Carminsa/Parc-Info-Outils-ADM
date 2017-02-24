@@ -29,9 +29,10 @@ module.exports = {
             state : req.body.state,
             os : req.body.os,
             usage : req.body.usage,
-            sav : req.body.sav,
-            garant: req.body.garant,
+            SAV : req.body.sav,
+            garantie: req.body.garant,
         }).exec(function(err, computer){
+            console.log(err);
             console.log(computer);
         });
     },

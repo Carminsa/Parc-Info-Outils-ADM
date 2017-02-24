@@ -6,7 +6,7 @@
     </div>
     <% } %>
 
-    <form action="/insert" method="post">
+    <form action="/insert_cpu" method="post">
 
         <div class="row">
             <div class="col-md-12">
@@ -20,12 +20,12 @@
                 <div class="form-group">
                     <label for="sav" class="label_auth">Retour SAV : </label>
                     <label>
-                        <input type="radio" name="sav" id="sav" value="true" checked>
+                        <input type="radio" name="sav" id="sav" value="1" checked>
                         Non
                     </label>
 
                     <label>
-                        <input type="radio" name="sav" id="sav" value="false">
+                        <input type="radio" name="sav" id="sav" value="0">
                         Oui
                     </label>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="col-md-4">
                     <select name="usage" id="usage" class="selectpicker size-radio">
                         <option disabled selected="selected">Selectionnez son utilisation</option>
-                        <option value="Utilisateur 7">Utilisateur</option>
+                        <option value="Utilisateur">Utilisateur</option>
                         <option value="Stockage">Stockage</option>
                         <option value="Tests">Test</option>
                     </select>

@@ -16,33 +16,33 @@ module.exports = {
         serial :{
             type: "string",
             unique : true,
-            required : true,
+            // required : true,
             // regex: /^[\w&.\-]*$/
         },
         state : {
             type : "string",
-            required : true,
-            regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
+            // required : true,
+            // regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
         },
         os : {
             type : "string",
-            required : true,
-            regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
+            // required : true,
+            // regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
         },
         usage : {
             type : "string",
-            required : true,
-            regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
+            // required : true,
+            // regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
         },
         SAV : {
             type : "integer",
-            required : true,
+            // required : true,
             // regex: /[^0-9]/,
         },
         garantie : {
             type: "string",
-            required : true,
-            regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
+            // required : true,
+            // regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
         },
     }
 };
