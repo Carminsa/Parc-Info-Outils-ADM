@@ -1,0 +1,85 @@
+<div class="col-md-12" id="margin-top-edit">
+
+    <% if (req.flash('error') == "true"){ %>
+    <div class="alert alert-danger">
+        <p class="error"> Bien tenté Florent ... </p>
+    </div>
+    <% } %>
+
+    <form action="/update_cpu" method="post">
+
+        <div class="form-group col-md-12">
+            <label for="serial" class="col-md-2 h4 ">Numéro Série : </label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="serial" id="serial" value="<%= computer[0].serial %>">
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="state" class="col-md-2 h4 ">Etat : </label>
+            <div class="col-md-8">
+                <select name="state" id="state" class="selectpicker size-radio">
+                    <option selected="selected"><%= computer[0].state %></option>
+                    <option value="Neuf">Neuf</option>
+                    <option value="Très Bon">Très Bon</option>
+                    <option value="Bon">Bon</option>
+                    <option value="OK">Ok</option>
+                    <option value="Mauvais">Mauvais</option>
+                    <option value="SAV">SAV</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="os" class="col-md-2 h4 ">Système d'Exploitation : </label>
+            <div class="col-md-8">
+                <select name="os" id="os" class="selectpicker size-radio">
+                    <option selected="selected"><%= computer[0].os %></option>
+                    <option value="Windows 7">Windows 7</option>
+                    <option value="Windows 8">Windows 8</option>
+                    <option value="Windows 10">Windows 10</option>
+                    <option value="Mac OS">Mac OS</option>
+                    <option value="Ubuntu">Ubuntu</option>
+                    <option value="Debian">Debian</option>
+                    <option value="Arche">Arche</option>
+                    <option value="Blinux">Blinux</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="usage" class="col-md-2 h4 ">Utilisation : </label>
+            <div class="col-md-8">
+                <select name="usage" id="usage" class="selectpicker size-radio">
+                    <option selected="selected"><%= computer[0].usage %></option>
+                    <option value="Utilisateur">Utilisateur</option>
+                    <option value="Stockage">Stockage</option>
+                    <option value="Tests">Test</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="garantie" class="col-md-2  h4">Garantie : </label>
+            <div class="col-md-8">
+                <select name="garant" id="garant" class="selectpicker size-radio">
+                    <option selected="selected"><%= computer[0].garantie %></option>
+                    <option value="HP">HP</option>
+                    <option value="ACER">ACER</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Toshiba">Toshiba</option>
+                    <option value="Lenovo">Lenovo</option>
+                </select>
+            </div>
+        </div>
+
+        <input type="hidden" name="id" value="<%= computer[0].id %>">
+
+        <div class="col-md-4 col-md-offset-5">
+            <input type="submit" class="btn btn-lg btn-warning" value="Modifier">
+        </div>
+
+    </form>
+</div>
+
+

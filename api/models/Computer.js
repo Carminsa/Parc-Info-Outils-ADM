@@ -17,7 +17,7 @@ module.exports = {
             type: "string",
             unique : true,
             required : true,
-            // regex: /^[\w&.\-]*$/
+            regex: /^[a-zA-Z0-9-,\u00E0-\u00FC\s]+$/
         },
         state : {
             type : "string",
@@ -34,12 +34,18 @@ module.exports = {
             required : true,
             regex: /^[a-zA-Z0-9-,\u00E0-\u00FC\s]+$/
         },
-
+        SAV : {
+            type : "string",
+            required : true,
+            defaultsTo : "0"
+        },
         garantie : {
             type: "string",
             required : true,
             regex: /^[a-zA-Z0-9-,\u00E0-\u00FC\s]+$/
         },
+
+
     }
 };
 

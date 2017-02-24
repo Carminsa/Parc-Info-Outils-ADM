@@ -128,6 +128,38 @@ module.exports.routes = {
         }
     },
 
+    'get /computers/:id' : {
+        controller : 'AdminController',
+        action : 'show_cpu',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'post /update_cpu' :{
+        controller : 'AdminController',
+        action : 'update_cpu',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'get /edit/:id' : {
+        controller : 'AdminController',
+        action : 'edit',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'get /back/:id' :{
+        controller : 'AdminController',
+        action : 'back',
+        locals: {
+            layout: 'layout'
+        }
+    }
+
 
     /***************************************************************************
      *                                                                          *

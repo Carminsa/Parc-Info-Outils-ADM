@@ -15,16 +15,24 @@
         </tr>
         </thead>
 
-        <% for(var i = 0 ; i < computers.length ; i++) {%>
+        <%  for(var i = 0 ; i < computer.length ; i++) {%>
+        <% if (computer[i].SAV == 1) { %>
+        <tr class="alert alert-danger">
+            <% } else { %>
         <tr>
-            <td><%= computers[i].id %></td>
-            <td><%= computers[i].serial %></td>
-            <td><%= computers[i].state %></td>
-            <td><%= computers[i].os %></td>
-            <td><%= computers[i].usage %></td>
-            <td><%= computers[i].garantie %></td>
-            <td><%= computers[i].updatedAt %></td>
-            <td><a href="/users/<%= computers[i].id %>">Voir</a></td>
+            <% } %>
+            <td><%= computer[i].id %></td>
+            <td><%= computer[i].serial %></td>
+            <td><%= computer[i].state %></td>
+            <td><%= computer[i].os %></td>
+            <td><%= computer[i].usage %></td>
+            <td><%= computer[i].garantie %></td>
+            <td><%= computer[i].updatedAt %></td>
+            <% if (computer[i].SAV == 1 ) { %>
+            <td><a href="/computers/<%= computer[i].id %>">Voir</a> / <a href="/back/<%= computer[i].id %>">En Retour SAV</a></td>
+            <% } else { %>
+            <td><a href="/computers/<%= computer[i].id %>">Voir</a> / <a href="/edit/<%= computer[i].id %>">Envoyer en SAV</a></td>
+            <% } %>
         </tr>
         <% } %>
     </table>
