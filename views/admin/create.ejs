@@ -6,79 +6,141 @@
     </div>
     <% } %>
 
-
     <form action="/insert" method="post">
 
-        <div class="form-group">
-            <label for="serial" class="label_auth ">Numéro Série : </label>
-            <input type="text" name="serial" class="form-control" id="serial" required>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="serial" class="label_auth ">Numéro Série : </label>
+                    <input type="text" name="serial" class="form-control" id="serial" required>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="sav" class="label_auth">Retour SAV : </label>
+                    <label>
+                        <input type="radio" name="sav" id="sav" value="true" checked>
+                        Non
+                    </label>
+
+                    <label>
+                        <input type="radio" name="sav" id="sav" value="false">
+                        Oui
+                    </label>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="sav" class="label_auth">Retour SAV : </label>
-            <label>
-                <input type="radio" name="sav" id="sav" value="true" checked>
-                Non
-            </label>
+        <div class="row">
+            <div class="col-md-12">
 
-            <label>
-                <input type="radio" name="sav" id="sav" value="false">
-                Oui
-            </label>
+                <div class="form-group col-md-3">
+                    <label for="usage" class="label_auth h4">Garantie : </label>
+                </div>
+
+                <div class="col-md-4">
+                    <select name="garant" id="garant" class="selectpicker size-radio">
+                        <option disabled selected="selected">Garantie Constructeur</option>
+                        <option value="HP">HP</option>
+                        <option value="ACER">ACER</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Toshiba">Toshiba</option>
+                        <option value="Lenovo">Lenovo</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="text" class="input_more" id="input_more_garant" name="garant">
+                    <span class="glyphicon glyphicon-plus span_more" id="span_more_garant" aria-hidden="true"></span>
+
+                </div>
+
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="garant" class="label_auth">Garantie : </label>
-            <select name="grand" id="grand" class="selectpicker">
-                <option disabled selected="selected">Garantie Constructeur</option>
-                <option value="HP">HP</option>
-                <option value="ACER">ACER</option>
-                <option value="Apple">Apple</option>
-                <option value="Toshiba">Toshiba</option>
-                <option value="Lenovo">Lenovo</option>
-            </select>
-        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group col-md-3">
+                    <label for="os" class="label_auth h4">Système D'exploitation : </label>
+                </div>
 
-        <div class="form-group">
-            <label for="os" class="label_auth">Système D'exploitation : </label>
-            <select name="os" id="os" class="selectpicker">
-                <option disabled selected="selected">Selectionnez un OS</option>
-                <option value="Windows 7">Windows 7</option>
-                <option value="Windows 8">Windows 8</option>
-                <option value="Windows 10">Windows 10</option>
-                <option value="Mac OS">Mac OS</option>
-                <option value="Ubuntu">Ubuntu</option>
-                <option value="Debian">Debian</option>
-                <option value="Arche">Arche</option>
-                <option value="Blinux">Blinux</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="state" class="label_auth">Etat du produit : </label>
-            <select name="state" id="state" class="selectpicker">
-                <option disabled selected="selected">Selectionnez un étant dans la liste</option>
-                <option value="Neuf">Neuf</option>
-                <option value="Très Bon">Très Bon</option>
-                <option value="Bon">Bon</option>
-                <option value="OK">Ok</option>
-                <option value="Mauvais">Mauvais</option>
-                <option value="SAV">SAV</option>
-            </select>
-        </div>
+                <div class="col-md-4">
+                    <select name="os" id="os" class="selectpicker size-radio">
+                        <option disabled selected="selected">Selectionnez un OS</option>
+                        <option value="Windows 7">Windows 7</option>
+                        <option value="Windows 8">Windows 8</option>
+                        <option value="Windows 10">Windows 10</option>
+                        <option value="Mac OS">Mac OS</option>
+                        <option value="Ubuntu">Ubuntu</option>
+                        <option value="Debian">Debian</option>
+                        <option value="Arche">Arche</option>
+                        <option value="Blinux">Blinux</option>
+                    </select>
+                </div>
 
 
-        <div class="form-group">
-            <label for="usage" class="label_auth">Type d'Utilisation : </label>
-            <select name="usage" id="usage" class="selectpicker">
-                <option disabled selected="selected">Selectionnez son utilisation</option>
-                <option value="Utilisateur 7">Utilisateur</option>
-                <option value="Stockage">Stockage</option>
-                <option value="Tests">Test</option>
-            </select>
+                <div class="col-md-3">
+                    <input type="text" class="input_more" id="input_more_os" name="os">
+                    <span class="glyphicon glyphicon-plus span_more" id="span_more_os" aria-hidden="true"></span>
+
+                </div>
+
+            </div>
         </div>
 
 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group col-md-3">
+                    <label for="state" class="label_auth h4">Etat du produit : </label>
+                </div>
+
+                <div class="col-md-4">
+                    <select name="state" id="state" class="selectpicker size-radio">
+                        <option disabled selected="selected">Selectionnez un état</option>
+                        <option value="Neuf">Neuf</option>
+                        <option value="Très Bon">Très Bon</option>
+                        <option value="Bon">Bon</option>
+                        <option value="OK">Ok</option>
+                        <option value="Mauvais">Mauvais</option>
+                        <option value="SAV">SAV</option>
+                    </select>
+                </div>
+
+
+                <div class="col-md-3">
+                    <input type="text" class="input_more" id="input_more_state" name="state">
+                    <span class="glyphicon glyphicon-plus span_more" id="span_more_state" aria-hidden="true"></span>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group col-md-3">
+                    <label for="usage" class="label_auth h4">Type d'Utilisation : </label>
+                </div>
+
+                <div class="col-md-4">
+                    <select name="usage" id="usage" class="selectpicker size-radio">
+                        <option disabled selected="selected">Selectionnez son utilisation</option>
+                        <option value="Utilisateur 7">Utilisateur</option>
+                        <option value="Stockage">Stockage</option>
+                        <option value="Tests">Test</option>
+                    </select>
+                </div>
+
+
+                <div class="col-md-3">
+                    <input type="text" class="input_more" id="input_more_user" name="usage">
+                    <span class="glyphicon glyphicon-plus span_more" id="span_more_user" aria-hidden="true"></span>
+                </div>
+
+            </div>
+        </div>
 
         <br>
         <br>

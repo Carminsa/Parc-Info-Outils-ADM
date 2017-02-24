@@ -78,3 +78,69 @@ body{
 #cpu_btn{
     margin-left: -63px;
 }
+
+
+/****************** -----COMPUTER---- *****************************************/
+
+span {
+    cursor: pointer;
+    font-size: 1.8em;
+    left: 10px;
+}
+
+.span_more{
+    top: 6px !important;
+}
+
+.input_more{
+    left: -15px;
+    position: relative;
+}
+
+.size-radio{
+    width: 350px !important;
+}
+
+/********************** --- INPUT ANIMATION ---- ***********************/
+
+#input_more_garant {
+    width: 0;
+    transition: width 1s ease-in;
+}
+
+#input_more_garant.active {
+    left: 10px;
+    width: 210px;
+}
+
+#input_more_os {
+    width: 0;
+    transition: width 1s ease-in;
+}
+
+#input_more_os.active {
+    left: 10px;
+    width: 210px;
+}
+
+#input_more_state {
+    width: 0;
+    transition: width 1s ease-in;
+}
+
+#input_more_state.active {
+    left: 10px;
+    width: 210px;
+}
+
+
+#input_more_user {
+    width: 0;
+    transition: width 1s ease-in;
+}
+
+#input_more_user.active {
+    left: 10px;
+    width: 210px;
+}
+
