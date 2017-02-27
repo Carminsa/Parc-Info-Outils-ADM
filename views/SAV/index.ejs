@@ -1,0 +1,85 @@
+<div class="col-md-12 col-md-pull-1">
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>ID Ordinateurs</th>
+            <th>Numéro de Série</th>
+            <th>Etat</th>
+            <th>OS</th>
+            <th>Utilisation</th>
+            <th>Garantie</th>
+            <th>Envoyé le</th>
+            <th>Mis à jour le </th>
+        </tr>
+        </thead>
+
+        <div class="col-md-offset-5">
+            <h2>En Cours</h2>
+        </div>
+
+
+        <% for(var j = 0 ; j < savs.length ; j++) {
+        if (savs[j].foreign_key.SAV != 0) {
+        %>
+        <tr>
+            <td><%= savs[j].id %></td>
+            <td><%= savs[j].foreign_key.id %></td>
+            <td><%= savs[j].foreign_key.serial %></td>
+            <td><%= savs[j].foreign_key.state %></td>
+            <td><%= savs[j].foreign_key.os %></td>
+            <td><%= savs[j].foreign_key.usage %></td>
+            <td><%= savs[j].foreign_key.garantie %></td>
+            <td><%= savs[j].createdAt %></td>
+            <td><%= savs[j].updatedAt %></td>
+        </tr>
+        <% } %>
+        <% } %>
+
+    </table>
+    <br>
+    <hr>
+    <br>
+
+    <div class="col-md-offset-5">
+        <h2>Historique</h2>
+    </div>
+
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>ID Ordinateurs</th>
+            <th>Numéro de Série</th>
+            <th>Etat</th>
+            <th>OS</th>
+            <th>Utilisation</th>
+            <th>Garantie</th>
+            <th>Envoyé le</th>
+            <th>Mis à jour le </th>
+        </tr>
+        </thead>
+
+
+        <% for(var i = 0 ; i < savs.length ; i++) {%>
+        <tr>
+            <td><%= savs[i].id %></td>
+            <td><%= savs[i].foreign_key.id %></td>
+            <td><%= savs[i].foreign_key.serial %></td>
+            <td><%= savs[i].foreign_key.state %></td>
+            <td><%= savs[i].foreign_key.os %></td>
+            <td><%= savs[i].foreign_key.usage %></td>
+            <td><%= savs[i].foreign_key.garantie %></td>
+            <td><%= savs[i].createdAt %></td>
+            <td><%= savs[i].updatedAt %></td>
+        </tr>
+        <% } %>
+
+    </table>
+
+
+</div>

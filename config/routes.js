@@ -158,6 +158,14 @@ module.exports.routes = {
         locals: {
             layout: 'layout'
         }
+    },
+
+    'get /sav' : {
+        controller : 'SavController',
+        action : 'index',
+        locals: {
+            layout: 'layout'
+        }
     }
 
 

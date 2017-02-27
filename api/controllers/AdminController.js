@@ -111,8 +111,7 @@ module.exports = {
         });
 
         Sav.create({
-            sav_number: 1,
-            id_computer: req.param('id'),
+            foreign_key: req.param('id'),
         }).exec(function(err, ok){
             console.log(err);
         });

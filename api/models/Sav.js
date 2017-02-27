@@ -13,11 +13,10 @@ module.exports = {
             primaryKey: true,
             autoIncrement: true
         },
+        foreign_key : {
+            model: 'computer'
+        },
 
-        id_computer: {
-            type: 'integer',
-            required : true
-        }
-    },
+    }
 };
 
