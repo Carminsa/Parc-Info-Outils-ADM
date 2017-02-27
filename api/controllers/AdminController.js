@@ -1,5 +1,3 @@
-var count = 1;
-
 module.exports = {
 
 
@@ -52,7 +50,6 @@ module.exports = {
             return res.view('admin/edit_cpu', {computer: cpu, error : null});
         });
     },
-
 
     show: function (req, res) {
         User.find({
@@ -110,11 +107,11 @@ module.exports = {
         Computer.update({
             id : req.param('id')
         },{SAV: 1}).exec(function(err, computer){
-            count++;
+            if (err || computer.lenght === 0){}
         });
 
         Sav.create({
-            sav_number: count,
+            sav_number: 1,
             id_computer: req.param('id'),
         }).exec(function(err, ok){
             console.log(err);

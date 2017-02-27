@@ -14,14 +14,10 @@ module.exports = {
             autoIncrement: true
         },
 
-        sav_number : {
-            type : 'integer',
-        },
-
         id_computer: {
             type: 'integer',
             required : true
         }
-    }
+    },
 };
 

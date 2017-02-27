@@ -1,5 +1,12 @@
 <div class="col-md-12 col-md-pull-1">
 
+    <% if (req.flash('error') == "true"){ %>
+    <div class="alert alert-danger">
+        <p class="error"> Bien tenté Florent ... </p>
+    </div>
+    <% } %>
+
+
     <table class="table">
 
         <thead>
