@@ -127,10 +127,5 @@ module.exports = {
         return res.redirect('/computers');
     },
 
-    delete: function (req, res) {
-        return res.json({
-            todo: 'delete() is not implemented yet!'
-        });
-    }
 };
 
