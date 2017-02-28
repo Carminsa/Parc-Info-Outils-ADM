@@ -16,6 +16,10 @@ module.exports = function(req, res, next) {
         return res.redirect('/admin');
     }
 
+    if (req.session.role == 2){
+        return res.redirect('/modo');
+    }
+
     if (req.session.userId) {
         return next();
     }

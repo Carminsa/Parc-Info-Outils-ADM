@@ -166,6 +166,14 @@ module.exports.routes = {
         locals: {
             layout: 'layout'
         }
+    },
+
+    'get /modo' : {
+        controller : 'ModeratorController',
+        action : 'index',
+        locals: {
+            layout: 'layout'
+        }
     }
 
 
