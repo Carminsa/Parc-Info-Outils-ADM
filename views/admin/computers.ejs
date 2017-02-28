@@ -1,4 +1,4 @@
-<div class="col-md-12 col-md-pull-1">
+
 
     <% if (req.flash('error') == "true"){ %>
     <div class="alert alert-danger">
@@ -14,11 +14,12 @@
             <th>#</th>
             <th>Serial</th>
             <th>Etat</th>
-            <th>Système d'Exploitation</th>
+            <th class="col-md-2">Système d'Exploitation</th>
             <th>Utilisateurs</th>
             <th>Garantie</th>
             <th>Mis à Jour </th>
-            <th>Action</th>
+            <th>Région</th>
+            <th class="col-md-2">Action</th>
         </tr>
         </thead>
 
@@ -35,6 +36,8 @@
             <td><%= computer[i].usage %></td>
             <td><%= computer[i].garantie %></td>
             <td><%= computer[i].updatedAt %></td>
+            <td><%= computer[i].department.department %></td>
+
             <% if (computer[i].SAV == 1 ) { %>
             <td><a href="/computers/<%= computer[i].id %>">Voir</a> / <a href="/back/<%= computer[i].id %>">En Retour SAV</a></td>
             <% } else { %>
@@ -43,6 +46,3 @@
         </tr>
         <% } %>
     </table>
-
-
-</div>

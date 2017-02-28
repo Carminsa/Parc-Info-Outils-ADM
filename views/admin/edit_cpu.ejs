@@ -73,6 +73,19 @@
             </div>
         </div>
 
+        <div class="form-group col-md-12">
+            <label for="department" class="col-md-2  h4">Région : </label>
+            <div class="col-md-8">
+                <select name="department" id="department" class="selectpicker size-radio">
+                    <option selected="selected" value="<%= computer[0].department.id %>"><%= computer[0].department.department %></option>
+                    <% for (var i = 0 ; i < dep.length ; i++) {
+                    if (dep[i].department != computer[0].department.department ){    %>
+                    <option value="<%= dep[i].id %>"><%= dep[i].department %></option>
+                    <% } } %>
+                </select>
+            </div>
+        </div>
+
         <input type="hidden" name="id" value="<%= computer[0].id %>">
 
         <div class="col-md-4 col-md-offset-5">

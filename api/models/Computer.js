@@ -45,9 +45,15 @@ module.exports = {
             regex: /^[a-zA-Z0-9-,\u00E0-\u00FC\s]+$/
         },
 
-        sav: {
+        sav : {
             collection: 'sav',
             via: 'foreign_key'
+        },
+
+        department : {
+            type : 'integer',
+            model : 'department',
+            // columnName : 'id_department',
         }
 
 

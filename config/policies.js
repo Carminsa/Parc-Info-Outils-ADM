@@ -24,8 +24,15 @@ module.exports.policies = {
     },
 
     AdminController : {
-        '*': 'rolePolicies',
+        '*': ['rolePolicies', 'modoPolicies'],
+        show_cpu : 'modoPolicies',
+        update_cpu : 'modoPolicies'
     },
+
+    ModeratorController : {
+        '*': 'modoPolicies',
+
+    }
 
 
   /***************************************************************************

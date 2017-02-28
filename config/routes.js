@@ -174,7 +174,16 @@ module.exports.routes = {
         locals: {
             layout: 'layout'
         }
-    }
+    },
+
+    'get /show/:id' : {
+        controller : 'ModeratorController',
+        action : 'show',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
 
 
     /***************************************************************************

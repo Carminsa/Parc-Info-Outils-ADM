@@ -1,0 +1,38 @@
+<div class="col-md-12 col-md-pull-1">
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Numéro de Série</th>
+            <th>Etat</th>
+            <th>Système d'exploitation</th>
+            <th>Utilisation</th>
+            <th>Retour SAV </th>
+            <th>Garantie</th>
+            <th>Département</th>
+            <th>Code Postal</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+
+        <% for(var i = 0 ; i < data.length ; i++) {%>
+        <tr>
+            <td><%= data[i].id %></td>
+            <td><%= data[i].serial %></td>
+            <td><%= data[i].state %></td>
+            <td><%= data[i].os %></td>
+            <td><%= data[i].usage %></td>
+            <td><%= data[i].SAV %></td>
+            <td><%= data[i].garantie %></td>
+            <td><%= data[i].department.department %></td>
+            <td><%= data[i].department.code %></td>
+            <td><a href="/computers/<%= data[i].id %>">Modifier</a></td>
+        </tr>
+        <% } %>
+    </table>
+
+
+</div>

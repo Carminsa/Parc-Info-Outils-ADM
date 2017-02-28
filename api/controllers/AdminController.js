@@ -35,7 +35,7 @@ module.exports = {
     },
 
     all_cpu: function(req, res){
-        Computer.find({}).exec(function(err, computers){
+        Computer.find({}).populate('department').exec(function(err, computers){
             return res.view('admin/computers', {computer : computers});
         });
     },
@@ -43,11 +43,15 @@ module.exports = {
     show_cpu: function(req, res){
         Computer.find({
             id : req.param('id')
-        }).exec(function(err, cpu){
+        }).populate('department').exec(function(err, cpu){
             if (!cpu || cpu.length === 0) {
                 return res.redirect('..');
             }
-            return res.view('admin/edit_cpu', {computer: cpu, error : null});
+            Department.find({}).exec(function(err, dep){
+                console.log(dep);
+                return res.view('admin/edit_cpu', {computer: cpu, error : null, dep : dep});
+            });
+
         });
     },
 
@@ -91,6 +95,7 @@ module.exports = {
                 os : req.body.os,
                 usage : req.body.usage,
                 garantie: req.body.garant,
+                department: req.body.department,
             }).exec(function(err, computer){
             if (err || computer.length === 0)
             {
