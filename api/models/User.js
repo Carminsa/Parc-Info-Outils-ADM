@@ -50,6 +50,13 @@ module.exports = {
             defaultsTo : "0"
         },
 
+        department : {
+            type : 'integer',
+            model : 'department',
+            required : true,
+            regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
+        },
+
         cheque : {
             collection : 'cheque',
             via : 'id_user',

@@ -168,6 +168,14 @@ module.exports.routes = {
         }
     },
 
+    'get /cheque' : {
+        controller : 'AdminController',
+        action : 'cheque',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
     'get /modo' : {
         controller : 'ModeratorController',
         action : 'index',
@@ -187,6 +195,30 @@ module.exports.routes = {
     'get /mail' : {
         controller : 'MailController',
         action : 'index',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'get /add' : {
+        controller : 'HomeController',
+        action : 'add',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'post /create' : {
+        controller : 'HomeController',
+        action : 'create',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'get /available' : {
+        controller : 'HomeController',
+        action : 'show',
         locals: {
             layout: 'layout'
         }

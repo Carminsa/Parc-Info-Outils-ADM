@@ -1,0 +1,41 @@
+
+
+<% if (req.flash('error') == "true"){ %>
+<div class="alert alert-danger">
+    <p class="error"> Bien tenté Florent ... </p>
+</div>
+<% } %>
+
+
+<h1><%= users[0].cheque[0].id %></h1>
+
+<table class="table">
+
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Numéro Chèque</th>
+        <th>Fait le </th>
+        <th>Montant</th>
+        <th>Nom du Chèque </th>
+        <th>Prénom user</th>
+        <th>Nom user</th>
+        <th>Mail</th>
+    </tr>
+    </thead>
+
+    <%  for(var i = 0 ; i < users.length ; i++) {%>
+    <%  for(var x = 0 ; x < users[i].cheque.length ; x++) {%>
+    <tr>
+        <td><%= users[i].cheque[x].id %></td>
+        <td><%= users[i].cheque[x].number %></td>
+        <td><%= users[i].cheque[x].expiration %></td>
+        <td><%= users[i].cheque[x].amount %></td>
+        <td><%= users[i].cheque[x].name %></td>
+        <td><%= users[i].firstname %></td>
+        <td><%= users[i].lastname %></td>
+        <td><%= users[i].mail %></td>
+    </tr>
+    <% } %>
+    <% } %>
+</table>

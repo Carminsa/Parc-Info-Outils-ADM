@@ -8,6 +8,7 @@
 module.exports = {
 
     index: function (req, res) {
+        console.log('bite');
         // Cheque.create({
         //     id : 5,
         //     id_user : 4,
@@ -17,7 +18,7 @@ module.exports = {
         //     amount : 432
         // }).exec(function(err, user){console.log(err)});
         //
-        User.find({id : 4}).populate('cheque').exec(function(err, usr){console.log(usr)})
+        // User.find({id : 4}).populate('cheque').exec(function(err, usr){console.log(usr)})
     },
 
 

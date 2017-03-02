@@ -20,9 +20,17 @@ module.exports = {
             unique : true
         },
 
-        expiration :  {
-            type : 'datetime',
-            required : true,
+        expiration : {
+            type : 'date',
+            required: true
+        },
+
+        month :  {
+            type : 'string',
+        },
+
+        year :  {
+            type : 'string',
         },
 
         name : {
@@ -37,7 +45,7 @@ module.exports = {
         id_user: {
             type : 'integer',
             model : 'user'
-        }
+        },
     }
 };
 

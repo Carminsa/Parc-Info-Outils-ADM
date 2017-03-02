@@ -7,33 +7,34 @@
 
 module.exports = {
 
-
-
-    /**
-     * `HomeController.index()`
-     */
     index: function (req, res) {
-      // console.log(req.session);
         return res.view('home/index');
     },
 
+    add: function(req, res){
+        return res.view('home/add', {error : false});
+    },
 
-    /**
-     * `HomeController.create()`
-     */
-    create: function (req, res) {
-        return res.json({
-            todo: 'create() is not implemented yet!'
+    create: function(req, res){
+        Cheque.create({
+            number : req.body.number,
+            expiration : req.body.date,
+            name : req.body.name,
+            amount : req.body.amount,
+            id_user : req.session.userId,
+        }).exec(function (err) {
+            if (err) {
+                console.log(err);
+                return res.view('home/add', {error: err.ValidationError});
+            }else {
+                return res.view('home/index', {error : err = null });
+            }
         });
     },
 
-
-    /**
-     * `HomeController.show()`
-     */
     show: function (req, res) {
-        return res.json({
-            todo: 'show() is not implemented yet!'
+        Computer.find({}).populate('department').exec(function(err, cpu){
+            console.log(cpu);
         });
     },
 

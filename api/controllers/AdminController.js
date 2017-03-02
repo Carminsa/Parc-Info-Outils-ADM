@@ -132,5 +132,12 @@ module.exports = {
         return res.redirect('/computers');
     },
 
+    cheque: function(req, res){
+        User.find({}).populate('cheque').exec(function(err, user){
+            console.log(user[0]);
+            return res.view('admin/cheque', {users : user});
+        });
+    }
+
 };
 

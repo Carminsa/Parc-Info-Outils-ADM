@@ -1,0 +1,38 @@
+<div class="col-md-12 margin-top">
+
+    <% if (error) { %>
+    <div class="alert alert-danger">
+        <p class="error">Une erreur est survenue merci de ressayer</p>
+    </div>
+    <% } %>
+
+
+    <form action="/create" method="post">
+
+        <div class="form-group">
+            <label for="number" class="label_auth ">Numéro du Chèque</label>
+            <input type="text" name="number" class="form-control" id="number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date" class="label_auth">Date d'éxpiration</label>
+            <input type="date" name="date" class="form-control" id="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="amount" class="label_auth">Montant</label>
+            <input type="text" name="amount" class="form-control" id="amount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="label_auth">Nom du propriètaire</label>
+            <input type="text" name="name" class="form-control" id="name" required>
+        </div>
+
+
+
+        <div class="col-md-4 col-md-offset-5">
+            <input type="submit" class="btn btn-lg btn-primary" value="S'inscrire">
+        </div>
+    </form>
+</div>

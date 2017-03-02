@@ -20,18 +20,17 @@
 module.exports.policies = {
 
     HomeController : {
-        '*': 'sessionAuth',
+        '*': ['sessionAuth', 'rolePolicies']
     },
 
     AdminController : {
         '*': ['rolePolicies', 'modoPolicies'],
         show_cpu : 'modoPolicies',
-        update_cpu : 'modoPolicies'
+        update_cpu : 'modoPolicies',
     },
 
     ModeratorController : {
         '*': 'modoPolicies',
-
     }
 
 

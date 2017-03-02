@@ -22,34 +22,5 @@ module.exports = {
         });
 
     },
-
-
-    /**
-     * `ModeratorController.create()`
-     */
-    create: function (req, res) {
-        return res.json({
-            todo: 'create() is not implemented yet!'
-        });
-    },
-
-    /**
-     * `ModeratorController.edit()`
-     */
-    edit: function (req, res) {
-        return res.json({
-            todo: 'edit() is not implemented yet!'
-        });
-    },
-
-
-    /**
-     * `ModeratorController.delete()`
-     */
-    delete: function (req, res) {
-        return res.json({
-            todo: 'delete() is not implemented yet!'
-        });
-    }
 };
 

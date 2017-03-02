@@ -36,7 +36,10 @@ module.exports = {
 
 
     create: function (req, res) {
-        return res.view('index/register', {error : err = null });
+        Department.find({}).exec(function(err, department){
+            return res.view('index/register', {error : err = null , dp : department});
+        });
+
     },
 
 
@@ -52,10 +55,11 @@ module.exports = {
             lastname : req.body.lastname,
             phone : req.body.phone,
             mail: req.body.mail,
+            department: req.body.department,
         }).exec(function (err) {
             if (err) {
-                console.log(err);
-                return res.view('index/register', {error: err.ValidationError});
+                req.flash('error', 'true');
+                return res.redirect('back');
             }else {
                 return res.view('index/index', {error : err = null });
             }
