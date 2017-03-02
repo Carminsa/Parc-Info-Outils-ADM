@@ -48,6 +48,12 @@ module.exports = {
         role : {
             type : "string",
             defaultsTo : "0"
+        },
+
+        cheque : {
+            collection : 'cheque',
+            via : 'id_user',
+            // columnName : 'id_department',
         }
     }
 };

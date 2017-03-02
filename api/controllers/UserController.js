@@ -61,26 +61,5 @@ module.exports = {
             }
         });
     },
-
-
-    show: function (req, res) {
-        return res.json({
-            todo: 'show() is not implemented yet!'
-        });
-    },
-
-
-    edit: function (req, res) {
-        return res.json({
-            todo: 'edit() is not implemented yet!'
-        });
-    },
-
-
-    delete: function (req, res) {
-        return res.json({
-            todo: 'delete() is not implemented yet!'
-        });
-    }
 };
 

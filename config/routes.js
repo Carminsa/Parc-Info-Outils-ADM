@@ -184,6 +184,14 @@ module.exports.routes = {
         }
     },
 
+    'get /mail' : {
+        controller : 'MailController',
+        action : 'index',
+        locals: {
+            layout: 'layout'
+        }
+    }
+
 
 
     /***************************************************************************
