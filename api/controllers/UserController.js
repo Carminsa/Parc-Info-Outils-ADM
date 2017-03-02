@@ -62,7 +62,6 @@ module.exports = {
 
     },
 
-
     insert: function (req, res){
         User.create({
             login : req.body.login,

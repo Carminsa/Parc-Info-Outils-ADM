@@ -32,11 +32,13 @@ module.exports.routes = {
      *                                                                          *
      ***************************************************************************/
 
+    // INDEX & USER CONTROLLER ********************************************************************************************************
+
     'get /': {
         controller : 'UserController',
         action : 'index',
         locals: {
-            layout: 'layout'
+            layout: 'layout_disconnected'
         }
     },
 
@@ -68,15 +70,25 @@ module.exports.routes = {
         controller : 'UserController',
         action : 'logout',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
+
+
+
+
+
+
+
+
+
+    // ADMIN CONTROLLER *****************************************************************************************************************************
 
     'get /index' : {
         controller : 'AdminController',
         action : 'index',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -84,7 +96,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'users',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -92,7 +104,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'show',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -100,7 +112,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'update',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -108,7 +120,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'create',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -116,7 +128,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'insert_cpu',
         locals : {
-            layout : 'layout'
+            layout : 'layout_admin'
         }
     },
 
@@ -124,7 +136,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'all_cpu',
         locals : {
-            layout : 'layout'
+            layout : 'layout_admin'
         }
     },
 
@@ -132,7 +144,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'show_cpu',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -140,7 +152,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'update_cpu',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -148,7 +160,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'edit',
         locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -156,15 +168,7 @@ module.exports.routes = {
         controller : 'AdminController',
         action : 'back',
         locals: {
-            layout: 'layout'
-        }
-    },
-
-    'get /sav' : {
-        controller : 'SavController',
-        action : 'index',
-        locals: {
-            layout: 'layout'
+            layout: 'layout_admin'
         }
     },
 
@@ -175,6 +179,32 @@ module.exports.routes = {
             layout: 'layout'
         }
     },
+
+
+
+
+
+
+
+    // SAV CONTROLLER ********************************************************************************************************************
+
+    'get /sav' : {
+        controller : 'SavController',
+        action : 'index',
+        locals: {
+            layout: 'layout_admin'
+        }
+    },
+
+
+
+
+
+
+
+
+
+    // MODO CONTROLLER ********************************************************************************************************************
 
     'get /modo' : {
         controller : 'ModeratorController',
@@ -192,6 +222,17 @@ module.exports.routes = {
         }
     },
 
+
+
+
+
+
+
+
+
+
+    // MAIL CONTROLLER ********************************************************************************************************************************
+
     'get /mail' : {
         controller : 'MailController',
         action : 'index',
@@ -199,6 +240,15 @@ module.exports.routes = {
             layout: 'layout'
         }
     },
+
+
+
+
+
+
+
+
+    // HOME CONTROLLER **********************************************************************************************************************************
 
     'get /add' : {
         controller : 'HomeController',
@@ -230,7 +280,23 @@ module.exports.routes = {
         locals: {
             layout: 'layout'
         }
-    }
+    },
+
+    'get /profil' : {
+        controller : 'HomeController',
+        action : 'profil',
+        locals: {
+            layout: 'layout'
+        }
+    },
+
+    'post /update_user' : {
+        controller : 'HomeController',
+        action : 'update_user',
+        locals: {
+            layout: 'layout'
+        }
+    },
 
 
 

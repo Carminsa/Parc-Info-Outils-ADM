@@ -39,6 +39,31 @@ module.exports = {
         });
     },
 
+    profil: function(req, res){
+        User.find({id : req.session.userId}).populate('department').exec(function(err, user){
+            Department.find({}).exec(function(err, dp){
+                return res.view('home/edit', {users : user, dp : dp});
+            });
+        });
+    },
+
+    update_user: function(req, res){
+        User.update({id : req.session.userId},{
+            login: req.body.login,
+            firstname : req.body.firstname,
+            lastname : req.body.lastname,
+            phone: req.body.phone,
+            mail : req.body.mail,
+            department : req.body.department
+        }).exec(function(err, success){
+            if (err){
+                req.flash('error', 'true');
+                return res.redirect('back');
+            }
+            return res.view('home/index');
+        });
+    },
+
     show: function (req, res) {
 
         if (req.session.role == 3 ){ return res.redirect('/standard');}

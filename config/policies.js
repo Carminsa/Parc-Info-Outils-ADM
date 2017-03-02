@@ -31,7 +31,10 @@ module.exports.policies = {
 
     ModeratorController : {
         '*': 'modoPolicies',
+    },
 
+    SavController : {
+        '*' : 'rolePolicies'
     }
 
 

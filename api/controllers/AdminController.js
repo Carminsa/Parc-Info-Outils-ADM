@@ -3,7 +3,7 @@ module.exports = {
 
 
     index: function (req, res) {
-        return res.view('admin/index', {error : err = null });
+        return res.view('admin/index', {layout : 'layout_admin', error : err = null });
     },
 
     users: function (req, res){
@@ -15,6 +15,7 @@ module.exports = {
     },
 
     create: function (req, res) {
+        console.log(req.session);
         Department.find({}).exec(function(err, department){
             return res.view('admin/create', {error : err = null , dp : department});
         });
