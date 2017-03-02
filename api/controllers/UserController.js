@@ -22,6 +22,7 @@ module.exports = {
                 req.session.userId = user[0].id;
                 req.session.userLogin = user[0].login;
                 req.session.role = user[0].role;
+                req.session.department = user[0].department;
                 req.session.save();
                 return res.redirect('/home');
             }

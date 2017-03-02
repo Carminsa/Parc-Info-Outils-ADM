@@ -222,7 +222,16 @@ module.exports.routes = {
         locals: {
             layout: 'layout'
         }
+    },
+
+    'get /standard' : {
+        controller : 'HomeController',
+        action : 'standard',
+        locals: {
+            layout: 'layout'
+        }
     }
+
 
 
 

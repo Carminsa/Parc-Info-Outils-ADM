@@ -53,6 +53,9 @@ module.exports = {
         department : {
             type : 'integer',
             model : 'department',
+            required : true,
+            regex: /^[a-zA-Z0-9-,\u00E0-\u00FC\s]+$/
+
             // columnName : 'id_department',
         }
 

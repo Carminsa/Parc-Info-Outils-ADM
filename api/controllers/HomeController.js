@@ -33,29 +33,19 @@ module.exports = {
     },
 
     show: function (req, res) {
-        Computer.find({}).populate('department').exec(function(err, cpu){
-            console.log(cpu);
+
+        if (req.session.role == 3 ){ return res.redirect('/standard');}
+        Computer.find({}).populate('department').exec(function(err, cpu) {
+            return res.view('home/show', {data: cpu});
         });
     },
 
-
-    /**
-     * `HomeController.edit()`
-     */
-    edit: function (req, res) {
-        return res.json({
-            todo: 'edit() is not implemented yet!'
-        });
-    },
-
-
-    /**
-     * `HomeController.delete()`
-     */
-    delete: function (req, res) {
-        return res.json({
-            todo: 'delete() is not implemented yet!'
+    standard : function(req, res){
+        Computer.find({department : req.session.department}).populate('department').exec(function(err, cpu) {
+            return res.view('home/show', {data: cpu});
         });
     }
+
+
 };
 

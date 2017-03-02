@@ -1,8 +1,8 @@
 <div class="col-md-12 margin-top">
 
-    <% if (error) { %>
+    <% if (req.flash('error') == "true"){ %>
     <div class="alert alert-danger">
-        <p class="error">Une erreur est survenue merci de ressayer</p>
+        <p class="error">Une erreur est survenue merci de ressayer </p>
     </div>
     <% } %>
 
@@ -150,18 +150,12 @@
                 </div>
 
                 <div class="col-md-4">
-                    <select name="department" id="department" class="selectpicker size-radio">
-                        <option disabled selected="selected">Selectionnez son utilisation</option>
-                        <option value="Utilisateur">Utilisateur</option>
-                        <option value="Stockage">Stockage</option>
-                        <option value="Tests">Test</option>
+                    <select name="department" id="department" class="selectpicker size-radio" required>
+                        <option selected="selected" disabled>Choisisez Votre région</option>
+                        <% for (var i = 0 ; i < dp.length ; i++) { %>
+                        <option value="<%= dp[i].id %>"><%= dp[i].department %></option>
+                        <% }  %>
                     </select>
-                </div>
-
-
-                <div class="col-md-3">
-                    <input type="text" class="input_more" id="input_more_user" name="usage">
-                    <span class="glyphicon glyphicon-plus span_more" id="span_more_user" aria-hidden="true"></span>
                 </div>
 
             </div>
@@ -175,3 +169,4 @@
         </div>
     </form>
 </div>
+

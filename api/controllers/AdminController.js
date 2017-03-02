@@ -15,8 +15,9 @@ module.exports = {
     },
 
     create: function (req, res) {
-
-        return res.view('admin/create', {error : null});
+        Department.find({}).exec(function(err, department){
+            return res.view('admin/create', {error : err = null , dp : department});
+        });
     },
 
     insert_cpu: function(req, res){
@@ -26,9 +27,11 @@ module.exports = {
             os : req.body.os,
             usage : req.body.usage,
             garantie: req.body.garant,
+            department: req.body.department,
         }).exec(function(err, computer){
             if(err || computer.length === 0){
-                return res.view('admin/create', {error: err.ValidationError});
+                req.flash('error', 'true');
+                return res.redirect('back');
             }
             return res.view('admin/index',{error : err = null });
         });

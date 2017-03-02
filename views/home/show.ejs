@@ -1,0 +1,36 @@
+<% if (req.flash('error') == "true"){ %>
+<div class="alert alert-danger">
+    <p class="error"> Bien tenté Florent ... </p>
+</div>
+<% } %>
+
+
+<table class="table">
+
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Serial</th>
+        <th>Etat</th>
+        <th class="col-md-2">Système d'Exploitation</th>
+        <th>Utilisateurs</th>
+        <th>Garantie</th>
+        <th>Mis à Jour </th>
+        <th>Région</th>
+    </tr>
+    </thead>
+
+    <%  for(var i = 0 ; i < data.length ; i++) {%>
+
+        <td><%= data[i].id %></td>
+        <td><%= data[i].serial %></td>
+        <td><%= data[i].state %></td>
+        <td><%= data[i].os %></td>
+        <td><%= data[i].usage %></td>
+        <td><%= data[i].garantie %></td>
+        <td><%= data[i].updatedAt %></td>
+        <td><%= data[i].department.department %></td>
+
+    </tr>
+    <% } %>
+</table>
