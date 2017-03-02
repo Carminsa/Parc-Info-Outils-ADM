@@ -36,7 +36,7 @@ module.exports = {
             regex: /^[a-zA-Z0-9\u00E0-\u00FC\s]+$/
         },
         phone : {
-            type : "integer",
+            type : "string",
             required : true,
             regex: /^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/
         },

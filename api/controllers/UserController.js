@@ -55,10 +55,6 @@ module.exports = {
 
 
     insert: function (req, res){
-
-        // var hash = bcrypt.hashSync(req.body.password, null, null);
-        // var hashedPassword = passwordHash.generate(req.body.password);
-
         User.create({
             login : req.body.login,
             password : req.body.password,
@@ -69,6 +65,7 @@ module.exports = {
             department: req.body.department,
         }).exec(function (err) {
             if (err) {
+                console.log(err);
                 req.flash('error', 'true');
                 return res.redirect('back');
             }else {
