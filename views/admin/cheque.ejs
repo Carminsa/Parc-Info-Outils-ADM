@@ -6,21 +6,22 @@
 </div>
 <% } %>
 
-
-<h1><%= users[0].cheque[0].id %></h1>
-
 <table class="table">
 
     <thead>
     <tr>
         <th>#</th>
-        <th>Numéro Chèque</th>
+        <th class="col-md-2">Numéro Chèque</th>
         <th>Fait le </th>
+        <th>A</th>
         <th>Montant</th>
-        <th>Nom du Chèque </th>
-        <th>Prénom user</th>
-        <th>Nom user</th>
-        <th>Mail</th>
+        <th>Nom caution </th>
+        <th>Prénom caution</th>
+        <th>profil de</th>
+        <th>Mail caution</th>
+        <th>Adresse caution</th>
+        <th>ville caution</th>
+        <th>Numéro de la caution</th>
     </tr>
     </thead>
 
@@ -30,11 +31,15 @@
         <td><%= users[i].cheque[x].id %></td>
         <td><%= users[i].cheque[x].number %></td>
         <td><%= users[i].cheque[x].expiration %></td>
-        <td><%= users[i].cheque[x].amount %></td>
-        <td><%= users[i].cheque[x].name %></td>
+        <td><%= users[i].cheque[x].in %></td>
+        <td><%= users[i].cheque[x].amount %> €</td>
+        <td><%= users[i].cheque[x].lastname %></td>
         <td><%= users[i].firstname %></td>
         <td><%= users[i].lastname %></td>
         <td><%= users[i].mail %></td>
+        <td><%= users[i].cheque[x].adress %></td>
+        <td><%= users[i].cheque[x].town %></td>
+        <td><%= users[i].cheque[x].phone %></td>
     </tr>
     <% } %>
     <% } %>

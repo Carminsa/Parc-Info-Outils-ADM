@@ -18,8 +18,15 @@ module.exports = {
     create: function(req, res){
         Cheque.create({
             number : req.body.number,
+            from : req.body.from,
+            in : req.body.in,
+            firstname : req.body.firstname,
+            lastname : req.body.lastname,
+            adress : req.body.adress,
+            town : req.body.town,
+            email : req.body.email,
+            phone : req.body.phone,
             expiration : req.body.date,
-            name : req.body.name,
             amount : req.body.amount,
             id_user : req.session.userId,
         }).exec(function (err) {

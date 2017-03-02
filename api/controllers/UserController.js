@@ -1,6 +1,4 @@
-// var passwordHash = require('password-hash');
 var Passwords = require('machinepack-passwords');
-
 
 module.exports = {
 
@@ -30,7 +28,18 @@ module.exports = {
                         req.session.role = user[0].role;
                         req.session.department = user[0].department;
                         req.session.save();
-                        return res.redirect('/home');
+
+                        if (req.session.role == 1)
+                        {
+                            return res.redirect('/admin');
+
+                        } else if (req.session.role == 2 )
+                        {
+                            return res.redirect('/modo');
+                        }else
+                        {
+                            return res.redirect('/home');
+                        }
                     },
                 });
             } else {
