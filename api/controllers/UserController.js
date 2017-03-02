@@ -1,4 +1,6 @@
 // var passwordHash = require('password-hash');
+var Passwords = require('machinepack-passwords');
+
 
 module.exports = {
 
@@ -8,23 +10,31 @@ module.exports = {
 
 
     login: function(req, res){
-
-        // var hash = passwordHash.generate(req.body.password);
-        // console.log(hash);
-
         User.find({
             login: req.body.login,
-            password: req.body.password
         }).exec(function (err, user) {
-            if (user.length === 0) {
-                return res.view('index/index', {error: "Erreur login/mot de passe"});
+            if (user.length > 0 ){
+                Passwords.checkPassword({
+                    passwordAttempt: req.body.password,
+                    encryptedPassword: user[0].password,
+                }).exec({
+                    error: function (err) {
+                        console.log(err);
+                    },
+                    incorrect: function () {
+                        return res.view('index/index', {error: "Erreur dans le mot de passe"});
+                    },
+                    success: function () {
+                        req.session.userId = user[0].id;
+                        req.session.userLogin = user[0].login;
+                        req.session.role = user[0].role;
+                        req.session.department = user[0].department;
+                        req.session.save();
+                        return res.redirect('/home');
+                    },
+                });
             } else {
-                req.session.userId = user[0].id;
-                req.session.userLogin = user[0].login;
-                req.session.role = user[0].role;
-                req.session.department = user[0].department;
-                req.session.save();
-                return res.redirect('/home');
+                return res.view('index/index', {error: "Le Login n'existe pas"});
             }
         });
     },
