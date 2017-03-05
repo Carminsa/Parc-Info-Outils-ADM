@@ -66,10 +66,13 @@ module.exports = {
 
     show: function (req, res) {
 
-        if (req.session.role == 3 ){ return res.redirect('/standard');}
-        Computer.find({}).populate('department').exec(function(err, cpu) {
-            return res.view('home/show', {data: cpu});
-        });
+        if (req.session.role == 4 ){
+            return res.redirect('/standard');
+        } else {
+            Computer.find({}).populate('department').exec(function (err, cpu) {
+                return res.view('home/show', {data: cpu});
+            });
+        }
     },
 
     standard : function(req, res){

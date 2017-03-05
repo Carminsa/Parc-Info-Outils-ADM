@@ -71,6 +71,7 @@ module.exports = {
     },
 
     update: function(req, res){
+        console.log(req.body.role)
         User.update(
             {id : req.body.id},
             { login : req.body.login,
