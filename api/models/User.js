@@ -48,7 +48,7 @@ module.exports = {
         },
         role : {
             type : "string",
-            defaultsTo : "3"
+            defaultsTo : "4"
         },
 
         department : {
