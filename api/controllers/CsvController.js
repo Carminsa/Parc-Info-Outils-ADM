@@ -18,7 +18,8 @@ module.exports = {
 
                 var  fields = ['id ordinateurs', 'numero de serie', 'etat', 'systeme exploitation', 'type d usage', 'Garantie' , 'department', 'en SAV', 'cree le' , 'modifier le'];
 
-                for (var i = 0 ; i < computers.length ; i++) {
+                for (var i = 0 ; i < computers.length ; i++)
+                {
                     myData.push({
                             "id ordinateurs": computers[i].id,
                             "numero de serie": computers[i].serial,
